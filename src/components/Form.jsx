@@ -9,7 +9,6 @@ const Form = ({ onChange, formData, onSubmit }) => {
       <input required name="city" type="text" value={formData.address?.street} onChange={onChange} placeholder="street"/>
       <input required name="city" type="text" value={formData.address?.city} onChange={onChange} placeholder="city"/>
       <input required name="city" type="text" value={formData.address?.zipcode} onChange={onChange} placeholder="zipcode"/>
-      <input required name="city" type="text" value={formData.company?.name} onChange={onChange} placeholder="company name"/>
       <input value="Submit Form" type="submit" />
     </form>
 

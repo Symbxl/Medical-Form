@@ -36,7 +36,7 @@ const App = () => {
   }, []);
 
   const handleChange = (e) => {
-    if (e.target.name === "city" && "name") {
+    if (e.target.name === "city") {
       setFormData({
         ...formData,
         address: {
