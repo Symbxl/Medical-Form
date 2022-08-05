@@ -9,10 +9,15 @@ const initialForm = {
   website: "",
   address: {
     city: "",
+    street: "",
+    zipcode: "",
+  },
+  company: {
+    name: "",
   },
 };
 
-function App() {
+const App = () => {
   const [tableData, setTableData] = useState([]);
   const [formData, setFormData] = useState(initialForm);
 
@@ -31,10 +36,13 @@ function App() {
   }, []);
 
   const handleChange = (e) => {
-    if (e.target.name === "city") {
+    if (e.target.name === "city" && "name") {
       setFormData({
         ...formData,
         address: {
+          [e.target.name]: e.target.value,
+        },
+        company: {
           [e.target.name]: e.target.value,
         },
       });
@@ -53,15 +61,15 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       <Form
         onChange={handleChange}
         formData={formData}
         onSubmit={handleSubmit}
       />
       <Table tableData={tableData} />
-    </>
+    </div>
   );
-}
+};
 
 export default App;
